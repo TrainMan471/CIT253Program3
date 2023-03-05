@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+  <h3>Welcome to Notoriously Unsafe Airlines</h3>
+  <p>Please select a most-likely, highly unsafe ride from the following flighs below!</p>
+  <p>Otherwise, here are a few possible options.</p>
+  
+  <table class="table">
+    <tr><th>Flight</th><th>Origin</th><th>Destination</th></tr>
+       {% for flights in schedule %} 
+            <tr><td>{{flights.flight}}</td><td>{{flights.origin}}</td><td>{{flights.destination}}</td></tr>
+       {% endfor %} 
+   </table>
+   
+   <h3>Reservation Form</h3>
+
+  <form method="post" action="summary">
+      <p>Enter Full Name:    <input type="text" name="fullname" placeholder="Enter full name"><br><br>
+      <p>Enter Flight Number:<input type="text" name="flightNumber" placeholder="Enter The Flight Number" size='35'><br></p>
+	  
+	  <p>Choose A Seating Preference: <br><br>
+	  <select name= "seatingPreference">
+			<option value = "Coach">Coach</option>
+			<option value = "Luxury">Luxury</option>
+			<option value = "Engine Turbine">Engine Turbine</option>
+		</select></p>
+		
+		<p>Please Select A Preference For Your Last Meal: <br>
+		<input type="radio" name="foodPreference" value="Beef" checked>Beef<br>
+        <input type="radio" name="foodPreference" value="Chicken">Chicken<br>
+		<input type="radio" name="foodPreference" value="Vegan">Vegan
+		</p>
+		
+		<p><button type="submit">Submit Form</button></p>
+   </form>
+	  
+
+{% endblock %}

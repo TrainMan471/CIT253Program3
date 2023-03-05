@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+  <h3>Welcome to Notoriously UnSafe Airlines!</h3>
+    <p>Here is your order summary.</p>
+    <ul>
+        <li>Name: {{fullname}}</li>
+        <li>Flight Number: {{flightNumber}}</li>
+        <li>Food Preference: {{foodPreference}}</li>
+        <li>Class: {{seatingPreference}}</li>
+	</ul>
+
+{% endblock %}
